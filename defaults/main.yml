@@ -1,7 +1,7 @@
 ---
 # defaults file for dotfiles
 
-dotfiles_repo: "https://github.com/devopstoolbox.dotfiles.git"
+dotfiles_repo: "https://github.com/crivetimihai/dotfiles.git"
 dotfiles_repo_version: HEAD
 dotfiles_path: ~/.dotfiles
 spacemacs_version: "v0.200.13"

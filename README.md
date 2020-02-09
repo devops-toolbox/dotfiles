@@ -23,7 +23,7 @@ Role Variables
 --------------
 
 ```yaml
-dotfiles_repo: "https://github.com/devopstoolbox.dotfiles.git"
+dotfiles_repo: "https://github.com/crivetimihai/dotfiles.git"
 dotfiles_repo_version: HEAD
 dotfiles_path: ~/.dotfiles
 spacemacs_version: "v0.200.13"
@@ -66,7 +66,7 @@ Example Playbook
       import_role:
         name: devopstoolbox.dotfiles
       vars:
-        dotfiles_repo: "https://github.com/devopstoolbox.dotfiles.git"
+        dotfiles_repo: "https://github.com/crivetimihai/dotfiles.git"
         dotfiles_repo_version: HEAD
         dotfiles_path: ~/.dotfiles
         spacemacs_version: "v0.200.13"
