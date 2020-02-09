@@ -1,0 +1,36 @@
+---
+language: python
+services: docker
+
+env:
+  global:
+    - ROLE_NAME: dotfiles
+  matrix:
+    - >
+      CONTAINER_DISTRO=centos
+      CONTAINER_VERSION=7
+      CONTAINER_COMMAND="/usr/sbin/init"
+    - >
+      CONTAINER_DISTRO=centos
+      CONTAINER_VERSION=8
+      CONTAINER_COMMAND="/usr/sbin/init"
+    - >
+      CONTAINER_DISTRO=fedora
+      CONTAINER_VERSION=31
+      CONTAINER_COMMAND="/usr/sbin/init"
+    - >
+      CONTAINER_DISTRO=ubuntu
+      CONTAINER_VERSION=18.04
+      CONTAINER_COMMAND="/sbin/init"
+
+install:
+  # Install test dependencies.
+  - pip install molecule[docker]
+
+before_script: []
+
+script:
+  - molecule --debug test
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

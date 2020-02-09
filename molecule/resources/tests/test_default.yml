@@ -1,0 +1,6 @@
+# Molecule managed
+---
+file:
+  /home/ansible/.tmux.local:
+    exists: false
+    contains: []

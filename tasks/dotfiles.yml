@@ -1,0 +1,46 @@
+---
+# tasks file for dotfiles
+
+- name: install git
+  package:
+    name: git
+    state: present
+  become: true
+
+- name: install dotfiles
+  block:
+    - name: install antigen
+      get_url:
+        url: http://git.io/antigen
+        dest: "$HOME/antigen.zsh"
+
+    - name: checkout dotfiles git repo
+      git:
+        version: "{{ dotfiles_repo_version }}"
+        repo: "{{ dotfiles_repo }}"
+        dest: "{{ dotfiles_path }}"
+        update: true
+
+    - name: link dotfiles
+      file:
+        src: "{{ dotfiles_path }}/{{ item }}"
+        dest: "~/{{ item }}"
+        state: link
+      with_items: "{{ dotfiles_files }}"
+
+    - name: copy dotfiles.local
+      copy:
+        src: "{{ dotfiles_path }}/{{ item }}"
+        dest: "~/{{ item }}"
+        backup: true
+        remote_src: true
+      with_items: "{{ dotfiles_copy }}"
+
+    - name: copy dotfiles directories
+      copy:
+        src: "{{ dotfiles_path }}/{{ item }}"
+        dest: "~/{{ item }}"
+        remote_src: true
+      with_items: "{{ dotfiles_sync }}"
+  become: true
+  become_user: "{{ dotfiles_user }}"

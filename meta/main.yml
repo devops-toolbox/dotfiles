@@ -1,0 +1,30 @@
+---
+galaxy_info:
+  author: Mihai Criveti
+  description: Download, link and copy dotfiles from git repo
+  company: Mihai Criveti
+  license: MIT
+
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Fedora
+      versions:
+        - 31
+    - name: EL
+      versions:
+        - 7
+        - 8
+    - name: Debian
+      versions:
+        - buster
+    - name: Ubuntu
+      versions:
+        - bionic
+
+  galaxy_tags:
+    - rhel
+    - centos
+    - fedora
+
+# dependencies: []
