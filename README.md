@@ -8,10 +8,10 @@ dotfiles
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.dotfiles](https://galaxy.ansible.com/devops-toolbox.dotfiles)
+[https://galaxy.ansible.com/devopstoolbox.dotfiles](https://galaxy.ansible.com/devopstoolbox.dotfiles)
 
 ```bash
-ansible-galaxy install devops-toolbox.dotfiles
+ansible-galaxy install devopstoolbox.dotfiles
 ```
 
 Requirements
@@ -23,7 +23,7 @@ Role Variables
 --------------
 
 ```yaml
-dotfiles_repo: "https://github.com/devops-toolbox.dotfiles.git"
+dotfiles_repo: "https://github.com/devopstoolbox.dotfiles.git"
 dotfiles_repo_version: HEAD
 dotfiles_path: ~/.dotfiles
 spacemacs_version: "v0.200.13"
@@ -64,9 +64,9 @@ Example Playbook
   tasks:
     - name: dotfiles is configured
       import_role:
-        name: devops-toolbox.dotfiles
+        name: devopstoolbox.dotfiles
       vars:
-        dotfiles_repo: "https://github.com/devops-toolbox.dotfiles.git"
+        dotfiles_repo: "https://github.com/devopstoolbox.dotfiles.git"
         dotfiles_repo_version: HEAD
         dotfiles_path: ~/.dotfiles
         spacemacs_version: "v0.200.13"
@@ -98,4 +98,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
